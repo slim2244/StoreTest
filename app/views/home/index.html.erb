@@ -1,0 +1,27 @@
+<div class="card-deck">
+
+      <% @products.each do |e| %>
+        <div class="col-4 "">
+  <br>
+
+        <div class="card text-center bg-light text-dark">
+            <div class="card-header bg-dark text-white">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                      <h4 class="card-title"><%= e.title %></h4>
+                    </li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h4>  <%= image_tag(e.image_url)%></h4>
+                <h6><I> Prix : <%= e.price%> min </I></h6>
+                <br>
+                <p> Descriptions :<%= e.description %></p>
+                <%= button_to "Ajouter au panier", line_items_path(product_id: e) %>
+              </div>
+        <%end%>
+        </div>
+
+
+</div>
